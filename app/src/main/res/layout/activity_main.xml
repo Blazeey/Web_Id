@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:passcodeView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:gravity="center_horizontal|center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messenger_text"
+        android:text="Welcome to\n WebId"
+        android:textSize="40sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/messenger_text"
+        android:gravity="center"
+        android:id="@+id/ph_no_text"
+        android:textColor="@android:color/darker_gray"
+        android:text="What number can people use to reach you?"/>
+
+    <LinearLayout
+        android:id="@+id/sign_up_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ph_no_text"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="5"
+            android:textColorHint="@android:color/white"
+            android:hint="Phone number">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/phone_number_sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:drawablePadding="10dp"
+                android:textColorHint="@android:color/white"
+                android:drawableStart="@drawable/ic_local_phone_white_24dp"
+                android:textColor="@android:color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Otp"
+            android:textAllCaps="false"
+            android:id="@+id/send_otp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otp_options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sign_up_options"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <online.devliving.passcodeview.PasscodeView
+            android:id="@+id/otp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:digitColorBorder="@android:color/white"
+            app:digitColorFilled="@android:color/white"
+            android:layout_weight="9"
+            passcodeView:numDigits="6" />
+
+        <ImageButton
+            android:id="@+id/confirm_otp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_forward_black_24dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
